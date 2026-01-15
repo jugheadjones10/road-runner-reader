@@ -78,35 +78,12 @@ export function Library() {
     <div className="library">
       <header className="library-header">
         <div className="logo">
-          <svg viewBox="0 0 32 32" className="logo-icon">
-            <rect
-              x="4"
-              y="6"
-              width="6"
-              height="20"
-              rx="1"
-              fill="currentColor"
-              opacity="0.6"
-            />
-            <rect
-              x="13"
-              y="4"
-              width="6"
-              height="24"
-              rx="1"
-              fill="currentColor"
-              opacity="0.8"
-            />
-            <rect
-              x="22"
-              y="8"
-              width="6"
-              height="16"
-              rx="1"
-              fill="currentColor"
-            />
-          </svg>
-          <h1>SpeedRead</h1>
+          <img
+            src="/favicon.png"
+            alt="Road Runner Reader"
+            className="logo-icon"
+          />
+          <h1>Road Runner Reader</h1>
         </div>
         <button
           className="upload-btn"

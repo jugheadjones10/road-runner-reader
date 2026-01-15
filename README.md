@@ -1,7 +1,7 @@
-# SpeedRead
+# Road Runner Reader
 
 <p align="center">
-  <img src="favicon.png" alt="SpeedRead Logo" width="128" height="128" />
+  <img src="favicon.png" alt="Road Runner Reader Logo" width="128" height="128" />
 </p>
 
 <p align="center">
@@ -10,14 +10,17 @@
 
 ---
 
-## What is SpeedRead?
+## What is Road Runner Reader?
 
-SpeedRead is a modern web application that lets you read EPUB books using **Rapid Serial Visual Presentation (RSVP)** — a speed reading technique that displays one word at a time at your chosen pace. This method eliminates eye movement and allows you to read much faster than traditional reading.
+Road Runner Reader is a modern web application that lets you read EPUB books using **Rapid Serial Visual Presentation (RSVP)** — a speed reading technique that displays one word at a time at your chosen pace. This method eliminates eye movement and allows you to read much faster than traditional reading.
 
 The app highlights the **Optimal Recognition Point (ORP)** of each word in red, helping your brain process words more efficiently.
 
 <p align="center">
   <img src="example.png" alt="Example Screenshot" />
+</p>
+<p align="center">
+  <img src="dashboard.png" alt="Example Dashboard Screenshot" />
 </p>
 
 ## Features
@@ -108,7 +111,7 @@ The built files will be in the `dist` folder.
 
 Traditional reading requires your eyes to move across lines of text, which takes time and energy. RSVP eliminates this by presenting words one at a time in a fixed position.
 
-The **Optimal Recognition Point (ORP)** is the character in each word where your eye naturally focuses. By highlighting this point (shown in red), SpeedRead helps your brain recognize words faster.
+The **Optimal Recognition Point (ORP)** is the character in each word where your eye naturally focuses. By highlighting this point (shown in red), Road Runner Reader helps your brain recognize words faster.
 
 With practice, most people can comfortably read at 400-600 WPM using RSVP, compared to the average 200-250 WPM of traditional reading.
 
