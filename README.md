@@ -1,73 +1,113 @@
-# React + TypeScript + Vite
+# SpeedRead
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="favicon.png" alt="SpeedRead Logo" width="128" height="128" />
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>A web-based EPUB reader with RSVP speed reading</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## What is SpeedRead?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SpeedRead is a modern web application that lets you read EPUB books using **Rapid Serial Visual Presentation (RSVP)** — a speed reading technique that displays one word at a time at your chosen pace. This method eliminates eye movement and allows you to read much faster than traditional reading.
 
-## Expanding the ESLint configuration
+The app highlights the **Optimal Recognition Point (ORP)** of each word in red, helping your brain process words more efficiently.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📚 Library Dashboard
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Upload EPUB files via drag & drop or file picker
+- Grid view of your book collection with cover images
+- Track reading progress across all books
+- Books stored locally in your browser (IndexedDB)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### ⚡ Speed Reader (RSVP Mode)
+
+- One word at a time display
+- ORP (Optimal Recognition Point) highlighted in red
+- Adjustable reading speed: 100 - 1200 WPM
+- Video-like progress bar with time display
+- Play/pause controls
+
+### 📖 Text View
+
+- Traditional reading mode
+- Current position highlighted
+- Click any word to jump to that position
+
+### 🔀 Split View
+
+- Speed reader and text view side by side
+- Perfect for switching between speed reading and manual reading
+
+### 📑 Chapter Navigation
+
+- Sidebar with all chapters
+- Word count per chapter
+- Quick navigation between sections
+
+### ⌨️ Keyboard Shortcuts
+
+| Key     | Action                |
+| ------- | --------------------- |
+| `Space` | Play / Pause          |
+| `←`     | Jump back 10 words    |
+| `→`     | Jump forward 10 words |
+| `↑`     | Increase WPM by 50    |
+| `↓`     | Decrease WPM by 50    |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/epub-speed-reader.git
+cd epub-speed-reader
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The built files will be in the `dist` folder.
+
+## Tech Stack
+
+- **React 19** - UI framework
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **epub.js** - EPUB parsing
+- **localforage** - IndexedDB storage
+- **React Router** - Navigation
+
+## How RSVP Works
+
+Traditional reading requires your eyes to move across lines of text, which takes time and energy. RSVP eliminates this by presenting words one at a time in a fixed position.
+
+The **Optimal Recognition Point (ORP)** is the character in each word where your eye naturally focuses. By highlighting this point (shown in red), SpeedRead helps your brain recognize words faster.
+
+With practice, most people can comfortably read at 400-600 WPM using RSVP, compared to the average 200-250 WPM of traditional reading.
+
+## License
+
+MIT
