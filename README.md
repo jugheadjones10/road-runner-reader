@@ -16,6 +16,10 @@ SpeedRead is a modern web application that lets you read EPUB books using **Rapi
 
 The app highlights the **Optimal Recognition Point (ORP)** of each word in red, helping your brain process words more efficiently.
 
+<p align="center">
+  <img src="example.png" alt="Example Screenshot" />
+</p>
+
 ## Features
 
 ### 📚 Library Dashboard
