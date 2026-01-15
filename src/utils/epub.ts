@@ -36,7 +36,22 @@ export async function parseEpub(file: File): Promise<{
 async function getCoverUrl(epub: EpubBook): Promise<string | null> {
   try {
     const coverUrl = await epub.coverUrl();
-    return coverUrl || null;
+    if (!coverUrl) return null;
+    
+    // Convert blob URL to base64 data URL for persistence
+    const response = await fetch(coverUrl);
+    const blob = await response.blob();
+    
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        resolve(reader.result as string);
+      };
+      reader.onerror = () => {
+        resolve(null);
+      };
+      reader.readAsDataURL(blob);
+    });
   } catch {
     return null;
   }
