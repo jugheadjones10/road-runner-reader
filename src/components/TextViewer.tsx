@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactElement } from 'react';
 
 interface TextViewerProps {
   words: string[];
@@ -27,8 +27,8 @@ export function TextViewer({ words, currentIndex, onWordClick }: TextViewerProps
 
   // Group words into paragraphs (roughly every 100 words or so for readability)
   const renderText = () => {
-    const elements: JSX.Element[] = [];
-    let currentParagraph: JSX.Element[] = [];
+    const elements: ReactElement[] = [];
+    let currentParagraph: ReactElement[] = [];
     
     words.forEach((word, index) => {
       const isActive = index === currentIndex;
