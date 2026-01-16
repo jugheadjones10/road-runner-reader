@@ -754,6 +754,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: var(--space-2xl);
+  overflow: hidden;
 }
 
 .speed-word {
@@ -766,14 +767,30 @@ button {
   align-items: center;
 }
 
-.word-before,
+/* Fixed-width containers to keep ORP character centered */
+.word-before {
+  color: var(--text-primary);
+  /* Fixed width to accommodate longest prefix (about 10 characters) */
+  width: 10ch;
+  text-align: right;
+  flex-shrink: 0;
+}
+
 .word-after {
   color: var(--text-primary);
+  /* Fixed width to accommodate longest suffix */
+  width: 10ch;
+  text-align: left;
+  flex-shrink: 0;
 }
 
 .word-orp {
   color: var(--accent-primary);
   text-shadow: 0 0 20px var(--accent-glow);
+  /* ORP stays in center, fixed width of 1 character */
+  width: 1ch;
+  text-align: center;
+  flex-shrink: 0;
 }
 
 /* Speed controls */
@@ -973,6 +990,11 @@ button {
 
   .speed-word {
     font-size: clamp(1.5rem, 10vw, 3rem);
+  }
+
+  .word-before,
+  .word-after {
+    width: 8ch;
   }
 
   .text-viewer {

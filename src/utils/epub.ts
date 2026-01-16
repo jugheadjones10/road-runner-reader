@@ -186,13 +186,14 @@ export function tokenizeText(text: string): string[] {
 
 export function calculateORP(word: string): number {
   // Optimal Recognition Point (ORP) calculation
-  // Generally around 1/3 into the word, slightly adjusted for word length
+  // Based on speedread algorithm: https://github.com/pasky/speedread
+  // The ORP is positioned slightly left of center to aid rapid recognition
   const len = word.length;
   if (len <= 1) return 0;
-  if (len <= 5) return Math.floor(len / 2) - 1;
-  if (len <= 9) return Math.floor(len / 2) - 1;
-  if (len <= 13) return Math.floor(len / 2);
-  return Math.floor(len / 2);
+  if (len <= 5) return 1;       // 2-5 letters: 2nd character
+  if (len <= 9) return 2;       // 6-9 letters: 3rd character
+  if (len <= 13) return 3;      // 10-13 letters: 4th character
+  return 4;                     // 14+ letters: 5th character
 }
 
 export function calculateReadingTime(wordCount: number, wpm: number): number {
